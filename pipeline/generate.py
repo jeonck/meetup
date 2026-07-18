@@ -11,9 +11,14 @@ Claude로 분석해 다음 섹션으로 구성된 한국어 포스트를 생성�
   - 바로 활용하기 (실천 항목)
   - 참고 자료 (객관성 근거용 공식 문서 링크)
 
+추가로, 같은 스크립트의 핵심 기술과 추구 방향을 소재로 웹 검색으로 자료를 조사해
+참조 링크(작성 중 열람한 자료)를 포함한 리서치 글을 content/blog/ 에 별도 게시한다.
+
 코드블록 안에서 `---` 만 있는 줄로 구분하면 스크립트 여러 개를 각각 별도 포스트로
 처리한다. 이미 게시에 사용된 스크립트(텍스트 해시 기준)는 다시 나타나도 건너뛴다.
-입력이 비어 있으면 FALLBACK_QUOTES(기술 토픽 풀)에서 그날의 항목을 대신 사용한다.
+밋업 포스트와 블로그 글은 독립 dedup(`h` / `blog::h`)이라 한쪽 실패 시 그쪽만
+재시도된다. 입력이 비어 있으면 FALLBACK_QUOTES(기술 토픽 풀)에서 그날의 항목을
+대신 사용한다(폴백 항목에는 블로그 글을 만들지 않는다).
 
 Usage:
     python pipeline/generate.py [--dry-run]
@@ -42,6 +47,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SENTENCE_FILE = ROOT / "input" / "script.md"
 STATE_FILE = ROOT / "pipeline" / "state.json"
 CONTENT_DIR = ROOT / "content" / "posts"
+BLOG_DIR = ROOT / "content" / "blog"
 
 KST = timezone(timedelta(hours=9))
 
@@ -136,6 +142,57 @@ QUOTE_NOTE = (
     " empty array, and base \"actions\" and \"references\" on how a reader would"
     " start learning it."
 )
+
+# ── 블로그(리서치) 생성 ──
+# 밋업 스크립트의 핵심 기술과 추구 방향을 소재로, 웹 검색으로 자료를 실제 조사해
+# 참조 링크를 포함한 별도의 리서치 글을 content/blog/ 에 게시한다.
+# claude-code 백엔드는 WebSearch 툴, api 백엔드는 서버측 web_search 툴을 사용한다.
+
+BLOG_SYSTEM_PROMPT = """You are a tech researcher-writer for a Korean developer \
+blog. You receive a raw meetup transcript, identify its core technologies and the \
+direction the speaker/community is pursuing, and then RESEARCH those topics on the \
+web before writing. You MUST use the web search tool to look up current, factual \
+material (official docs, project pages, research reports) and you may only cite \
+URLs that actually appeared in your search results — never invent or guess a URL. \
+Write all body text in natural Korean; keep technology names in English. The \
+article must stand on researched evidence: every major claim should be traceable \
+to one of the cited sources."""
+
+BLOG_PROMPT = """Below is a raw meetup transcript (imperfect speech-to-text). \
+Your task is NOT to summarize the meetup. Instead:
+
+1. Identify the 2-4 core technologies and the overall direction/trend the talk
+   pursues (e.g. platform engineering, GitOps, zero trust, AI-assisted ops).
+2. Use the web search tool to research each of them: official documentation,
+   project pages, foundation/report pages (CNCF, DORA, etc.). Do enough searches
+   to ground every major claim (typically 4-8 searches).
+3. Write ONE in-depth Korean blog article (1200-2000 Korean characters of body)
+   about those technologies and that direction — what they are, why the industry
+   is moving that way, current state, and practical adoption advice.
+
+Citation rules (critical, for objectivity):
+- While writing, cite the sources you actually consulted as inline markdown
+  links, e.g. "CNCF의 [연례 서베이](https://www.cncf.io/reports/)에 따르면 ...".
+- Only cite URLs that appeared in your web search results. Never fabricate URLs.
+- Every section should contain at least one cited source.
+
+Respond ONLY with JSON in exactly this format, no other text:
+
+{{"title": "블로그 글 제목 (한국어, 기술 용어는 영어 유지)",
+ "body": "마크다운 본문. '## 소제목' 섹션 구조, 인라인 참조 링크 포함. 한국어.",
+ "references": [
+   {{"title": "열람한 자료 이름", "url": "https://...",
+     "note": "이 자료가 본문의 어떤 주장을 뒷받침하는지 한 줄"}}
+ ],
+ "tags": ["kebab-case-tag", "max 3"]}}
+
+The "references" array lists every source you consulted (searched and used),
+including the ones cited inline. 4-8 items.
+
+Transcript:
+{sentence}"""
+
+HEADING_BLOG_REFS = "🔗 참고 자료 (작성 중 열람한 자료)"
 
 # 포스트 본문 섹션 제목
 HEADING_INPUT = "📋 밋업 한눈에 보기"
@@ -304,6 +361,84 @@ def generate_cli(model: str, sentence: str, source: str | None = None) -> dict |
     return None
 
 
+def parse_blog_result(text: str) -> dict | None:
+    match = re.search(r"\{.*\}", text, re.DOTALL)
+    if not match:
+        return None
+    try:
+        data = json.loads(match.group(0))
+    except json.JSONDecodeError:
+        return None
+    required = ("title", "body")
+    if not all(isinstance(data.get(k), str) and data.get(k) for k in required):
+        return None
+    refs = data.get("references") or []
+    data["references"] = [
+        r for r in (refs if isinstance(refs, list) else [])
+        if isinstance(r, dict) and str(r.get("url", "")).startswith("http")
+    ]
+    if not data["references"]:  # 열람 자료 없는 리서치 글은 게시하지 않음
+        return None
+    tags = data.get("tags") or []
+    data["tags"] = [slugify(str(t)) for t in tags[:3] if str(t).strip()] or ["tech-research"]
+    return data
+
+
+def generate_blog_api(client, model: str, sentence: str) -> dict | None:
+    prompt = BLOG_PROMPT.format(sentence=sentence)
+    for attempt in (1, 2):
+        try:
+            response = client.messages.create(
+                model=model,
+                max_tokens=8000,
+                system=BLOG_SYSTEM_PROMPT,
+                tools=[{"type": "web_search_20250305", "name": "web_search",
+                        "max_uses": 8}],
+                messages=[{"role": "user", "content": prompt}],
+            )
+        except Exception as exc:  # noqa: BLE001
+            if is_fatal_api_error(exc):
+                raise FatalAPIError(str(exc)) from exc
+            log(f"  블로그 API 오류 (시도 {attempt}): {exc}")
+            if attempt == 2:
+                return None
+            continue
+        text = "".join(b.text for b in response.content if b.type == "text")
+        result = parse_blog_result(text)
+        if result:
+            return result
+        log(f"  블로그 JSON 파싱 실패 (시도 {attempt}): {text[:120]!r}")
+    return None
+
+
+def generate_blog_cli(model: str, sentence: str) -> dict | None:
+    prompt = BLOG_PROMPT.format(sentence=sentence)
+    env = os.environ.copy()
+    env.pop("ANTHROPIC_API_KEY", None)
+    cmd = ["claude", "-p", "--model", model, "--tools", "WebSearch",
+           "--output-format", "text", "--append-system-prompt", BLOG_SYSTEM_PROMPT]
+    for attempt in (1, 2):
+        try:
+            result = subprocess.run(cmd, input=prompt, env=env, timeout=600,
+                                     capture_output=True, text=True)
+        except subprocess.TimeoutExpired:
+            log(f"  블로그 CLI 타임아웃 (시도 {attempt})")
+            continue
+        if result.returncode != 0:
+            err = (result.stderr or result.stdout).strip()
+            if is_fatal_api_error(RuntimeError(err)):
+                raise FatalAPIError(err[:300])
+            log(f"  블로그 CLI 오류 (시도 {attempt}): {err[:200]}")
+            if attempt == 2:
+                return None
+            continue
+        parsed = parse_blog_result(result.stdout)
+        if parsed:
+            return parsed
+        log(f"  블로그 JSON 파싱 실패 (시도 {attempt}): {result.stdout[:120]!r}")
+    return None
+
+
 def yaml_quote(s: str) -> str:
     return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
@@ -399,6 +534,39 @@ tags: [{tags_str}]
     return path
 
 
+def write_blog_post(result: dict, date: datetime) -> Path:
+    BLOG_DIR.mkdir(parents=True, exist_ok=True)
+    base = f"{date.date().isoformat()}-{slugify(result['title'])}"
+    path = BLOG_DIR / f"{base}.md"
+    n = 2
+    while path.exists():
+        path = BLOG_DIR / f"{base}-{n}.md"
+        n += 1
+
+    tags_str = ", ".join(yaml_quote(t) for t in result["tags"])
+
+    ref_lines = [f"## {HEADING_BLOG_REFS}\n"]
+    for item in result["references"]:
+        title = item.get("title", "") or item.get("url", "")
+        url = item.get("url", "")
+        note = item.get("note", "")
+        entry = f"- [{title}]({url})"
+        if note:
+            entry += f" — {note}"
+        ref_lines.append(entry)
+
+    post = f"""---
+title: {yaml_quote(f"{date.date().isoformat()} {result['title']}")}
+date: {date.isoformat()}
+tags: [{tags_str}]
+---
+{result['body'].strip()}
+
+""" + "\n".join(ref_lines) + "\n"
+    path.write_text(post, encoding="utf-8")
+    return path
+
+
 def load_state() -> dict:
     if STATE_FILE.exists():
         try:
@@ -456,37 +624,67 @@ def main() -> int:
     fatal_error = None
     for item in queue:
         sentence, source, h = item["text"], item["source"], item["dedup_key"]
-        if h in processed:
+        blog_key = f"blog::{h}"
+        # 밋업 정리 포스트와 리서치 블로그는 독립 dedup — 한쪽만 실패해도
+        # 다음 실행에서 실패한 쪽만 재시도된다. 블로그는 실제 스크립트에만 생성
+        # (폴백 기술 브리프에는 리서치 글을 만들지 않음).
+        need_post = h not in processed
+        need_blog = source is None and blog_key not in processed
+        if not need_post and not need_blog:
             skipped_dup += 1
             continue
 
         preview = sentence if len(sentence) <= 80 else sentence[:80] + "…"
         log(f"\n오늘의 항목 ({len(sentence)}자): {preview}")
-        try:
-            if backend == "claude-code":
-                result = generate_cli(model, sentence, source)
+
+        if need_post:
+            try:
+                if backend == "claude-code":
+                    result = generate_cli(model, sentence, source)
+                else:
+                    result = generate_api(client, model, sentence, source)
+            except FatalAPIError as exc:
+                fatal_error = exc
+                break
+
+            if result is None:
+                log("  생성 실패 — 건너뜁니다 (다음 실행에서 재시도)")
+                failed += 1
             else:
-                result = generate_api(client, model, sentence, source)
-        except FatalAPIError as exc:
-            fatal_error = exc
-            break
+                now = datetime.now(KST)
+                log(f"  → {result['title']}")
+                if args.dry_run:
+                    log(json.dumps(result, ensure_ascii=False, indent=2))
+                else:
+                    path = write_post(sentence, result, now, source)
+                    log(f"  생성 파일: {path.relative_to(ROOT)}")
+                    processed[h] = now.date().isoformat()
+                    new_count += 1
 
-        if result is None:
-            log("  생성 실패 — 건너뜁니다 (다음 실행에서 재시도)")
-            failed += 1
-            continue
+        if need_blog:
+            log("  리서치 블로그 생성 중 (웹 검색 포함)…")
+            try:
+                if backend == "claude-code":
+                    blog = generate_blog_cli(model, sentence)
+                else:
+                    blog = generate_blog_api(client, model, sentence)
+            except FatalAPIError as exc:
+                fatal_error = exc
+                break
 
-        now = datetime.now(KST)
-        log(f"  → {result['title']}")
-
-        if args.dry_run:
-            log(json.dumps(result, ensure_ascii=False, indent=2))
-            continue
-
-        path = write_post(sentence, result, now, source)
-        log(f"  생성 파일: {path.relative_to(ROOT)}")
-        processed[h] = now.date().isoformat()
-        new_count += 1
+            if blog is None:
+                log("  블로그 생성 실패 — 건너뜁니다 (다음 실행에서 재시도)")
+                failed += 1
+            else:
+                now = datetime.now(KST)
+                log(f"  → [blog] {blog['title']}")
+                if args.dry_run:
+                    log(json.dumps(blog, ensure_ascii=False, indent=2))
+                else:
+                    path = write_blog_post(blog, now)
+                    log(f"  생성 파일: {path.relative_to(ROOT)}")
+                    processed[blog_key] = now.date().isoformat()
+                    new_count += 1
 
     log(f"\n=== 결과: 신규 {new_count} / 중복 스킵 {skipped_dup} / 생성 실패 {failed} ===")
 

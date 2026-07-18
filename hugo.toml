@@ -6,6 +6,8 @@ paginate = 10
 
 [params]
   env = 'production'
+  # 홈 카드 목록은 밋업 정리(posts)만 — 리서치 글은 Blog 메뉴에서 열람
+  mainSections = ['posts']
   title = 'Meetup Insights'
   description = '밋업 스크립트를 붙여넣으면 핵심 정리와 기술 리서치 포스트로 자동 게시하는 사이트'
   author = 'jeonck'
@@ -46,6 +48,11 @@ paginate = 10
     name = 'Posts'
     url = '/posts/'
     weight = 10
+  [[menu.main]]
+    identifier = 'blog'
+    name = 'Blog'
+    url = '/blog/'
+    weight = 15
   [[menu.main]]
     identifier = 'tags'
     name = 'Tags'
