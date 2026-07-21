@@ -12,753 +12,658 @@
     미니 기술 브리프를 게시합니다. 블로그가 조용해지는 날이 없습니다.
 -->
 ```
-I would like to see all you guys please come there as well.
-Because sheeps usually do calculate breakfasts.
-So, food and beverage also, singer by Chris.
-Thank you.
-So, if anybody wants to sponsor, his, uh, our board, and he's, uh, we all are working on open source projects.
-So, yeah, that's all in source competition.
+내용을 스토리텔링
 
-마이크
+YouTube
 
-So, I would like you guys to introduce yourself, but you are, of course, for pleasure. So, if you want to talk about yourself, you're not a problem, you are actually looking for some jobs, or highly for options.
-So anybody wants to start, anybody wants to say hello to the people.
-Hello, my name is Jhenjin, and I have KWS and party experience, and I'm doing it all.
+So to break this out even further, we start with identifying the source.
+ And this is really about workload classification.
+ So which workloads do I have that are on legacy families?
+ In Google, this could be, you know, N1, N2, N2D machine types.
+ Um, which of these workloads are stable enough to evaluate, which are causing performance or efficiency pain in my environment today or in my architecture?
+ Those pains that you have, those are going to be the best candidates because those are going to provide you an engineering wind and a cost win.
 
-마이크
 
-Anybody else?
-Right here.
-Good?
-No.
-What in the other one?
-I'm Anita, and I'm working at the cloud engineer for, um, Satana with these chapters. Of course. And I have three plus years of experiences, a technical subject here, a chapter, and a security service.
-So, if you know any opportunity, and connect you automating.
-Thank you.
-Awesome, thank you.
+YouTube
 
-마이크
+ And then we also, you know, we get the performance evaluation or performance data.
+ We need to understand how we're getting that utilization, I ops, memory pressure data, right?
+ Are we going to be using, you know, installed ops agents on these VMs?
+ Are we going to be using native solutions?
+ Or are we going to have to take a step back and use generalized benchmarks, like Core Mark, Spec 2017, et cetera?
+ And just to be very clear on this, right, you all live in this benchmarking world probably more than I do.
+ I'm not here to teach you guys about P99 latency or network throughput, right?
 
-else?
-places.
-Uh, I, I'm, I work at, uh, uh, started by a building engineer, and I had not contributed to any thought being or solutions.
-I'm having block working manager.
-I haven't contributed today contributions, and, obviously, I've been allowed.
 
-마이크
+YouTube
 
-Thank you, guys.
-Guys, my name is David. I, uh, I'm here in LA.
-I work my first time.
-Very nice to see everybody.
-Hey, everyone.
-I want to go there go.
-There you go.
-This is bad.
-Um, so I need, uh, I managed to, uh, love that one team, I've been tech companies on global, and I've been to last year, you've gone, uh, uh, getting into this, uh... Hi, my name is Vijay.
+ My job is to help us start connecting this story of performance data to cost outcomes.
+ And so, What I want to do next, right, is talk about these targets.
+ What we do when we identify targets is the 2 things I commonly see is that most people check for 2 things, right?
+ They look for, um, does the new vam?
 
-마이크
 
-I'm in the Preservation Arctic.
-Just for recently murdered the UCCLCF Product Abbey.
-So I start product.
-Is it?
-Any? Yeah. Oh, temporal is AI, virtual. Oh.
-Hello, everyone.
-and
-Uh, I'm a data practical leader in, uh, used to be an Amazon native press, and no, no, no, no.
-Looking for my next row, but they're interested in learning about sober entities, right? I'm here.
+YouTube
 
-마이크
+This is that new VM family instance type support the workloads that I have today?
+ And is what is its list price?
+ But there are a few things that almost nobody checks for.
+ The 1st is, what is the actual price, right?
+ What is the committed run rate of the VMs that I'm moving to?
+ What is the discount rates, including their customer negotiated pricing?
+ Does that apply to my new machines?
+ The problem I see here, right, is that list price comparisons are almost always wrong, as they do not actually match the invoiced reality that you're going to see, reflective of PPAs, enterprise agreements, and enterprise discount programs.
 
-Yeah.
-My name is Steve.
-I'm an Azure market at full market.
-No confions yet.
-course.
-This is my 1st time, so my special time.
-pl there.
-Uh, early, you know, from all of the possibilities, I just want to start doing that. Uh, next to the mostly, can I see your that?
 
-마이크
+YouTube
 
-Hello. Well, my name is Louie.
-I want to... No, I don't meet him. At primary, you will be there... So, okay.
-Hello, everybody.
-My name is Derek Prier.
-Um, six year, a body engineer.
-My parents.
-Actually, it was SRA. Thank you. Um, I'm doing multi cloud and azure, and in the U.S., um, and I'm just here to learn and see how other boats are working.
+ So, That's the pricing conversation.
+ The next piece of this is around availability, which is, do I actually have the capacity and availability on the target families?
+ So is that available in the regions and zones that I'm looking to move to?
+ Um, I've seen far too often, uh, that strong engineering cases die for the modernization, simply because the capacity to do them wasn't actually there.
+ And again, AI demand for newer hardware is only making this worse.
 
-마이크
 
-super damage
-We're doing RLCD. Using plus, I'd like to see, which you know, I wasn't, this year from... Thank you.
-This will see a lot of new faces. Anybody wants to reduce themselves, and, uh... Hi, I'm Josh.
-Yeah, been automating Kubernating set up for a long time.
-You live here in town.
-Yeah, I'd love to talk to people who also automate the burnets.
+YouTube
 
-마이크
+ So you need to work with your account teams across the respective hyper scalers at AWS, Google, or Azure to get clarity on capacity and availability to know what is available and where that's available.
+ And so the takeaway for all this, right, is that it's not just enough to say we want to move on to newer hardware.
+ We need to know what you have, what you can move to, whether it performs better and whether it costs less using your rates.
+ And finally, right, we need to know whether the capacity actually exists to move.
 
-All right, awesome.
-Hey, quick collection.
-So, the food and marriages, also sponsored by Mara here.
-you want to say something?
-Okay, come on, they love me.
-You get reversed.
-We have another space, a real, organized bands, and also, for our regular recommenities, for the nice conferences.
-Tacabans and Arabic.
-So, we would like to pass for our next week, that is also making nasty. I go straight first.
 
-마이크
+YouTube
 
-So, at the end, we're gonna grab it that fast, and we're eat at a scout, okay?
-What are you
-Thank you for all the food, and thank you for all the pizza.
-Thank you, Mara.
-So, yes, like you said, we have tickets, I hope, as many talkers.
-I mean, it's this is gonna be for one of the conferences.
-So what happens in August?
-So
-I know it's probably, I don't know, that's, uh, writing.
+ And so the transition, I want to mention here, right, is that this is really a price question.
+ Um, you know, what does it cost on the source and the target and what does that actually cost across the regions and instance families that I'm using?
+ And this is kind of a surprisingly hard question to answer with some of the hyper scalars native toy.
+ Um, so we actually helped build a tool to help with this problem.
+ That's what I'm going to demo quickly.
+ If you guys are interested, we can share a link in the chat here so you guys can open this up yourself.
+ This is just a quick pricing comparison tool to help us look at some of the data that we're discussing.
 
-마이크
 
-Oh, yes, that's.
-prices.
-Yeah, it's favorite atmosphere. Two rabbits, uh, implication, uh, supply.
-Any new stories?
-Anybody just got 75, learned something new?
-Awesome.
-There you go.
-Awesome.
-Chef?
-Um... I got some encouragement to try messing around with the world of AI outside the pod.
-And so what I started doing is, instead of put thought, I kind of used to, like, okay, approving every command. So what I started doing instead is running the an alley harness in a containerized environment, and passing in redoing credentials into that environment, and, um, letting it, and not restricting the commands or nuts, basically.
+YouTube
 
-마이크
+ So, if you guys go into this link, it's VMPricify.netfloy.app.
+ It will take you to this page.
+ This is a free tool.
+ There's no login, no email gates.
+ All this tool does is it compares Google Cloud VM list prices across different regions, machine types, CPU vendors, and then finally, it normalizes for performance.
+ So I just want to use this as a quick example, if anyone is interested.
+ But this is really just to help us, again, identify that source target conversation I was talking about.
 
-That's been quite interesting.
-And I've learned that, um, if you're having personal projects, there's, um, on open router, there's, like, a powerful free model owl alpha or whatever. So it'll be done by long cats on Chinese company, and they will harvest all your data, but if you're doing personal stuff, you probably don't care, and you probably don't want to pay, um, companies $100 a month to be able to use AIs, so, um,
-Yeah, we're worth looking into.
 
-마이크
+YouTube
 
-It's been interesting, yeah, kind of learning to interact with it in a new way, where it kind of will, you know.
-pull this ball?
-What?
-Is there a name for the project?
-This is part of my homeland, basically. But it's like something, you know, I've learned recently, yeah. Awesome.
-Okay.
-Uh, I just cleared the CKA, and then the, uh...
+ So when I mentioned the term source, I'm looking at source machine types.
+ So for Google Cloud, my source might look like I have the abs deployed in U.S. Central, and they're using machine types that are N2 standard aids.
+ So they have 8 CPUs, 32 gigabytes of memory by default.
+ And I can display this usage that I have today is either a price or a percentage of my percentage of cost.
+ If I go to price right, I can view this as monthly costs or potentially daily or hourly cost.
+ For the sake of this example, right, I'm going to use monthly costs.
 
-마이크
 
-Here, anybody else?
-Yeah, I just bought my
-Wow. I'm wondering why that is overriduced for so long.
-There's a lot to catch up.
-Don't worry.
-Thank you.
-Thank you for sharing.
-Awesome.
-I'm sure everybody has this story. so I there a big shot.
-Next time, I come up with great stories, you know? This is, like, how we bulk, uh, story.
-This great place to share.
+YouTube
 
-마이크
+ So now that I've identified my source, this is a very common instance type I see in Google.
+ I now need to then start identifying my targets, right?
+ And we can narrow these targets down.
+ Not every single machine type is going to be a good fit for my workload.
+ So we can narrow this down by CPU vendor, or we could potentially narrow it down by machine type family.
+ You know, Google offers many different types depending on the purpose of your workload.
+ Um, if CPU vendors are available, um, this is a very interesting topic, right?
+ Because some of the most priced performant machines out there today are on AMD or arm processors, especially for arm right, the new axion processors that Google has are incredibly priced performant, but they do potentially require some architecture redos to actually move your workloads onto them.
 
-Like it's kept over important, anyone hiring you, or looking.
-Anybody having anybody looking?
-Anybody hiring for starters?
-What are what positions do y'all have?
-?
-We're here?
-Okay.
-Also, they have...
-Anybody else, planning? We need the jobs, the end break place. We might be hiring a senior, or any engineer here in the, uh, hotel primary hospital.
 
-마이크
+YouTube
 
-It's a cool company to work.
-We know first.
-Okay, coming off.
-Please.
-Anyone?
-They were looking for jobs.
-What are you all looking for?
-Yeah, I'm looking for a senior...
-So, my, my, my...
+ And so, once I just give you guys a quick example, let's select a target machine type.
+ For the sake of this example, I'm going to be brief and only select one.
+ But let's say I want to consider moving from N2s to modernize my workloads onto an N4.
+ One of the 1st things that I think is interesting is looking at this purely from a price perspective.
+ If I look at N2 to N4 and I run the exact same amount of VCPU in memory, what is my cost going to be?
+ Is the N2 going to be more expensive or cheaper than the N4 Atlas rates?
 
-마이크
 
-Companies that you have.
+YouTube
 
-Yeah, we are, we have, uh, uh, sit down, also, uh...
-So, yeah, it's, uh, being watched. Dr. them, after a while, after this, we can stop.
+ Um, and this is just useful again to really help us with that pricing exercise.
+ But then we also need to look at um, normalized performance, right?
+ And this is kind of the whole point.
+ On raw price, newer machines can look more expensive per hour.
+ But if we normalize for benchmark performance, we can actually see that rankings typically flip.
+ And so now we're actually comparing against cost per unit of work, not cost per hour.
+ And this is important because, you know, we'll kind of go through this exercise a little bit later on in the talk as well.
 
-마이크
 
-Awesome.
-Thank you for sharing that information.
-So you bought, you have a very space of time.
-And also, we have sponsored, uh, drive.
-It's go to their website, go for jobs, they've also have new federospaces itself.
-One of our nearest partners, I relax.
-Anybody, uh, wanting to sign new technologies, like, go or cross automation, anything that you want to get your hands very easy.
+YouTube
 
-마이크
+ But if we normalize for performance, we can normalize performance based on relative benchmarks that are available.
+ So, um, I can use spec 2017 benchmarks, or I could also use Core Mark, which is a fairly popular one.
+ And all of this does is it says, because N4 is a newer machine type, I can actually use less N4s for equivalent performance of N2s.
+ And so if I do that, and I'll just go back to this benchmark, right?
+ If I can use less that's actually going to result in even greater cost savings.
 
-Why don't you try to have an apple as well? And they were giving free course worth of $1000.
-So one of you are going to go home with this course.
-stick your tickets.
-Awesome.
-Thank you.
-That would be possible, the organizers, the volunteers here.
-So, uh, we have this grandpa here, and we have Harsha on the back.
 
-마이크
+YouTube
 
-.
-I'm sure.
-If you don't want, uh, sign it up.
-Yeah, awesome.
-And Sammy, first of all, there you go.
-And my son.
-Thank you.
-Thanks for all the conversations, and thanks all for, uh, propolizing the...
-And we have new volunteers.
-Hey!
-Welcome from, uh, Drive Useful.
+ So if we just look at the percentage difference rate, there, it can be substantial cost savings.
+ Not just from the price side, but also if I'm able to use less and reduce my usage as a result of this VM modernization.
+ And so this is the tool.
+ This is, again, really just designed to help start this conversation.
+ It looks at list prices, which I did just say, right?
+ This cannot always, this is not always going to be accurate.
+ So if you guys are looking at a similar report where you want to understand your pricing, with custom pricing, we can't actually generate an analysis using your pricing data.
 
-마이크
 
-Yes, exactly
-Cool, and we have a hip hop.
-Hi, this is because I tried this community around 78, 8 months back.
-I have only to that, it took a, 2 dollars there.
-And my last 4 CarPlays for how previous it is, what is what I, and while I was experimenting that, I would end up going to get to that is to buy, to go, to something like that.
+YouTube
 
-마이크
+ There's a little toggle in the top, right, to get started on that process if you're interested.
+ Cool.
+ So that is really just to, um, help us answer the what question of what do I have today and what do I want to move to?
+ Now the question that breaks most plans is the sort of when question, right?
+ When is the right time to modernize?
+ When is the right window?
+ Um, and this is interesting to me because I think this one question about timing is both an engineering and a financial decision.
 
-So, uh, you know, like, they, they, they, they, and then, and of course, they, they, they, they, they, they.
-Great for having you guys here.
-Thanks for all doing.
-Thanks for letting us out here.
-And now let's start with the most top by Elba.
-Do you want
-Very, very, sweet.
 
-마이크
+YouTube
 
-You know, that's just power. Yeah. We don't need that.
+ On the engineering side, right, you guys know this side.
+ Maintenance, maintenance and release windows, a safe window where you have to test and roll back, where you have dependencies, risk tolerance, SLO sensitive periods.
+ And again, bandwidth, right?
+ You might have 10 things on your list, but only capacity to do 3 of them.
+ So that's kind of the engineering timing considerations.
+ There's also this financial timing, right?
+ This is the piece that's usually harder to see on the engineering side, which is when do my existing commitments expire?
 
-마이크
 
-What? Is the screen program, I replaced the screen with the, the, the, the, the... Yeah.
-What's up? It's recording now.
-Yeah.
-ated.
-Oh, yeah, it folks, I'm Gotham.
-I'm a C2 at Akimai, and today I'm going to be talking about designing a K-pop's needed to retain some taco, has a product, and a little bit about me. I've been in the Kubinari space for like 2 years now.
+YouTube
 
-마이크
+ What is the burn down of those commitments across my RIs, reservations, CUDs, savings plans?
+ Um, right?
+ If I'm if I just committed to using N2 resources 18 months ago, and I bought a three-year commitment, if I moved today, that means that I'm paying for capacity.
+ I'm no longer using, which is stranded commitment.
+ And so it might not make sense or might not make financial sense, right?
+ To actually modernize modernize my hardware that I just committed to for 3 years.
+ So even if I save money on the workload side by optimizing, that commitment waste I'm going to generate is just going to offset all those potential savings immediately.
 
-I go to Cukon and then I work with some amazing people.
-Being like songs, how about you, watching that?
-My deal on health.
-Oh, I need to be more loud, okay?
-Yeah, so how much do you hear?
-Okay, so, uh, okay, so I'm bottom, uh, pin it up, my, like, years, I worked on a Uber 90s brought-up team, so we basically designed a new engineer, even I started out for optimized internal service team.
-So basically we think human daddyies are brought up.
 
-마이크
+YouTube
 
-and my body was some amazingly those people
-I don't want to do some products. I just need to see a basketball game. And, uh, yeah, that's not basically right about me.
-And what we're going to talk about today is I'd like to think of this talk as like a 5 stage app.
-So on the 1st one, we're going to be talking about, okay, what platform is during previous?
-Like, why did it come to play?
-Whatever works is today and why lack of engineering was born. And then the key tops, fine, my get offs really makes waves today.
+ So, At the end of the day, this is a coordination problem, right?
+ If I modernize blindly, I risk wasting committed spend.
+ If I commit blind light, I might block engineering from doing necessary modernizations.
+ And so engineering knows when it is safe to move, Venops knows when the commitments expire.
+ In my experience, these planning cycles you know, can be commonly disconnected.
+ So, the takeaway here, right, is there's kind of this conflict of priorities.
 
-마이크
 
-And then a little bit about the platform that we're going to be trying to build or like the ones that we build up might to sort of scares to like 500 plus clusters, like 8000 plus hours of application, whatever.
-And we're going to talk about that.
-I'm going to, all the years, yeah, all the resource.
-And then the full picture of like the responsibility model and like, oh, platform was now the users of the platform, interact with them, and then keep take away like what people, what are you managers, success, and how, you know.
+YouTube
 
-마이크
+ And so you need to plan deliberately.
+ And so to do this, I actually want to use 2 kind of concrete examples describing an N 2 to N 4 upgrade on Google Cloud.
+ So I'm going to go through 2 options, and I'm going to show you 2 quick examples of beyond modernization.
+ Option A relies on using spend-based commitments.
+ Think savings plans or spend-based cuts on Google.
+ And then I'm also going to show you an option B, which relies on using resource-based commitments.
 
-So get started.
-DevOs, right?
-Like what I was really gave names was like the feed-up, right?
-Like you want your your application to be useful to sort of manage their own interest on here.
 
-마이크
+YouTube
 
-So, like, it introduced a bunch of tools like thereupon, ACL, and, like, talk of files, and all of a sudden you, your application teams are, like, okay, like, you know, we have the power to do stuff, like, you can independently shift faster, and, like, inherit it into software.
-But then, like, at the same time, was it really the freedom that they thought it was?
-Not really, because, like, all of a sudden, your application teams are sort of now thinking about Yamel?
-Like, what is that?
-And then, like, they're thinking about, like, domiciles, and, like, open eddies, and they're like, I don't care.
-I just want my application to work.
-I'm gonna be looking at that.
+ So you can think reservations, standard reserved instances, resource-based cuts.
+ And so across all hyper scalars, the premise of these examples is pretty much the same.
+ All hyperscalars offer spend-based commitments, which are usually more technically flexible in the sense that they're not locked into specific machine types or regions, but they receive worse discounts as a trade-off.
+ They also offer resource-based commitments, which are more technically restrictive in the sense that they require you to commit to specific instances, families, regions, but in exchange for those restrictions, they receive better discounting.
 
-마이크
 
-is was it
-I'm actually making my property money.
-I don't need to worry about infrastructure as much as I should.
-And that's what I also sort of introduces this sort of task model where, like, okay, right now you have application, you sort of, Afghanistan, like, ACL and all sorts of things that they never had.
-And then every scheme is sort of like duplicating effort in their own way, but like they're solving charges, they're already spoke to them.
-And we should be centralized in somewhere. And that's the whole notion of like how platform engineering was born.
+YouTube
 
-마이크
+ And so to level set on this example rate, the X axis at the bottom here, this is going to be months from 0 to 36.
+ The line in black here is representative of usage.
+ And so in option A, um, this is kind of the most common strategy that we see.
+ Not because it's necessarily better, but because it's simpler.
+ And because it's easier to go execute on.
+ And so in option A, just to kind of address why it's easy.
+ It's easy because you do not need to know your modernization window.
+ So if I have existing and 2 commitments, right, as these begin to expire, what option A does is it allows us to immediately buy new compute flexible cuts or spend-based commitments to replace that.
 
-So, yeah, traditionally, like, what you look at play levels, right?
-Like, you file a request, leave away for ages, and then manually, like, someone just has some
-Yeah, they have some knowledge that's like just in, yeah, but 2 2nd question.
-How many employees is the company you are just for like some context in terms of this talk?
-Oh, okay, okay.
-So, yeah, manually, like, people have some noise in their head, like, you propose, and then, like, you know, every request just goes to a queue, just that keeps filing on, and then you're just like, oh, my God, like, I just moved my application, just to go somewhere, like, why, buy so many tickets?
 
-마이크
+YouTube
 
-And then that's, can we do something for it?
-And the answer was yes.
-And, like, the ideas of, like, this self-service platform that actually just, like, request and then receive.
-And then we are completely astonished.
-like everything that you do with your platform is like your responsibility.
-Like, if you're just, even, like, this golden car platform by, like, your platform needs, and then they sort of, like, give you a platform that's, like, back and tested, secure, and auditors and all that stuff, and, like, the knowledge of, like, that product is using its own occupation and devils, and you really abstract away the more I received, everything, from users or applications that the person is really, you are more.
+ And it doesn't necessarily, I don't necessarily care whether my usage is on N2 or N4 because these spend-based cuds will naturally float across that usage, even if I do decide to modernize later on.
+ And so now a lot of people really like this option where maybe you have existing commitments for N2s, and then you immediately recommit using spend-based commitments.
+ Um, because again, it's easy to understand and it's easy to execute on.
+ It doesn't require knowing exactly how long your modernization is going to take, or how much of an impact that modernization effort will have in terms of a reduction to your usage, or otherwise known as, you know, price efficiency.
 
-마이크
 
-And that's basically what platform engineering is.
-So apart from engineering, there's a lot, doing like IETs or internal developer platforms that gave keeps this self-serviceability, to own a approach in a real lifestyle group, basically composed production. And it kind of has these clean options, which is, like, developers are the resided off part.
-So we're a test, and go and go back, whatever, entirely through your own, like, your own way without having to, like, interact with teams or like open tickets just to, like, get your intro.
+YouTube
 
-마이크
+ So, In practice, though, when I see customers execute on option A like this, we typically see 2 common issues.
+ The 1st is that these compute flexible cuts, or these spend-based commitments that are made, are almost always made too conservatively.
+ This is because we see customers, um, that if you don't fully understand what the impact of your modernization is going to be to usage, you may see a drop in usage after modernization, right?
+ And so customers don't want to overcommit, so they redo the spend-based CUD purchase and they commit conservatively, which ultimately leaves savings on the table.
 
-And then it kind of reduces coffee over the way that you are compared to the traditional data.
-There was paradigm, you only need to know stuff like terraform, HTL, and whatnot.
-We just focus on building a business logic that your company makes money around.
-And then the 3rd and most important idea is to keep your platform as a product.
-So like your internal developers.
-your customers, and then their adoption is something that drives that success from your product.
 
-마이크
+YouTube
 
-So I like to drill down a little bit more onto that point, which is basically reading back on other product.
-So, again, like, you know, like the IT, if you're in a, like, ETO developed by this customer, and then, like, what's really your product about, right?
-It has, like, well-defined documents, as manual and everything, and that's what translates to, right?
-developer documentation and whatnot. So that's like your developers are really unburdened and then you have like a feedback, you can wrote that there, like your developers or your internal users, they tell you what's wrong with your back home.
+ The 2nd problem we see is that customers almost always cap their long-term savings outcomes by committing or recommitting with spend-based commitments.
+ And this is really just because, again, doing this type of strategy, you're giving up the deeper long-term savings that could be associated with resource-based commitments.
+ So this all takes us to an alternative approach that I'm going to describe as option B.
+ Um, in option B right, this skips using flex cuts or flexible spend-based commitments, and it rolls straight onto using resource-based cuts.
 
-마이크
 
-You incorporated that into your product and then that's basically what it was.
-So that in mind, I was not kidding when I said, I do, and as days later, I love.
-So Dora asked me, main live, studio, TV, I assisted report, and 5000 or so respond.
-So, like, 9% of yours today, now done, and ID, and 76% of those after I gave the platform today.
-And, and like basically not having to have someone manage your intrastructure or like, even, it is the work art, increases the audio level of your activity by 5%.
+YouTube
 
-마이크
+ And this is the option rate that we generally push customers towards, as it can be a better long-term strategy for savings.
+ And here's why, right?
+ As I as my workloads are my commitments for N2 begin to expire.
+ Um, we are going to immediately and temporarily allow this usage to go on demand, right?
+ So we're still on N2s, but now that you say just transition to on-demand usage.
+ And, um, right, we're going to set what we call a modernization window.
+ Realistically, this modernization window from enterprise workloads can be anywhere right from 3 to 6 months, depending on the number of workloads that need to be moved, the capacity and the maintenance windows available to do that migration, right?
 
-And that's really more prevalent in the AI landscape today, because like, the work they found is like, you know, like AI basically doesn't fix fragmented that one, they sort of like amplifies whatever, sorry there.
-So what that means is, like, your AI, that you, there's a word, your customers.
-really comes down to how good your platform is, that's running it, and if your platform's not really good, but you don't really have one, then, like, you're not really having the AI back. You're running though, you have workers as well as you.
 
-마이크
+YouTube
 
-Um, yeah, so that's it.
-And with that.
-Or does that all come into today?
-So, like, the golden path, basically, you create a sp- any native, like, product or crowd, from idea to production, rewired it with key paws. And since the platform even knows exactly, they absorb all the complexity of the scenes, your plans, pay, quality, what it has, and everything, and they just, if you are customers or your internal developers today, like, what day exactly is, is, like, abstracted platform that they can manage.
+ And you're going to incur and carry some on-demand costs during this transition.
+ And it's really the on-demand cost that scares most people.
+ But at the end of the day, this strategy is a math problem.
+ It's not a leap of faith.
+ And so based on the discount rates associated with your environment, with your private pricing, we can actually calculate the break even point between option A and option B.
+ Which is basically just stating, how long can these workloads run on demand before the added cost savings of using resource-based commitments begin to outweigh the long-term savings created by using spend-based cuts?
 
-마이크
 
-not their application problem.
-So, with that, I'm going to tie it to part two, which is like architecting.
-Uber Nai is really makes it easier and harder at the same time. Because like now, with organized, you have like, like, yeah, these APIs, which are like, really perfect. Like, you stop to open any custom resources, which are like natural, right?
-So like anything you want to extend, you want the platform, but then CRDs, controllers, and like all that of stuff, like also introduces it on all that speed.
-You are daily, just like, you're introducing much more of that key by like reading more controllers, more like reconcile loops and whatnot.
+YouTube
 
-마이크
+ And so, in most cases, right, the savings that we generate over the lifetime of a commitment.
+ Uh, can actually pay for and outweigh the odd demand cost that we would have of doing this modernization period.
+ And so, in most cases, right, long term, option B is going to win.
+ And so, I know this is an example, specifically for Google Cloud, and it's a very simplified example, but we see the same principle and concept applied for Azure and EWS as well.
 
-And like when you really can't trade off to being like experience security.
-So, like, human ID kind of makes it hard.
-Out of the boss to just like deploy a bear coonage, cluster, and say like, okay, like this what we're gonna do.
-So in that way, taking that platform, product, mindset, we incorporated it into product, ordinary, with like 3 main.
-So those one is like 8 ops, 3 kit as the source of proof for everything you do.
 
-마이크
+YouTube
 
-So, like, applications and infrastructure are like, this is going to be yours also.
-And 0 trust, like he's provided by people. So, like, not just, like, making everything as these for the present as possible. And everything that needs something more permissive has to go to an escalation, which is, like, audited by reporters, like, everything, like it.
-And then this is not like shift left, RA is mindset, where, like, you're not really, you're not really enhancing the platform or like you're interrupted after there's been an audit.
+ Especially in Azure, right, as Azure is retiring, RI reservations for legacy hardware.
+ We see lots of customers, potentially panic buying savings plans, which is locking them into significantly worse discounts than reservations.
+ And the reason we see this kind of behavior is simply because customers are not able to create a clear plan for modernizing their hardware, which prevents them from using reservations in the future.
+ And so, on paper, right? Um, option B, this this kind of plan I'm showing you here, this seems great, but there are some trade-offs.
 
-마이크
 
-You sort of build for a way in your product, because there are days in place so that, like, you don't have to use that.
-Those are some of the principles that I want to talk about. And what is the job, right?
-Like, just to refresh, it's also basically like, your desired state, lives in it, engages, you're supposed to go for anything.
-It's not somebody dominminal, it's not everyone's world.
-That's, like, really forget.
-So everything lies in it, and then you have this model of controller, which basically looks adequate, and then it sort of like always pulls whatever it is in it, and sort of recognize that source into your cluster. And then every change that you actually want to do since it is your source circle, is or ER.
+YouTube
 
-마이크
+ The 1st is that you need tighter coordination, right?
+ You need to know what capacity and what capacity is there and what's the availability to move, right?
+ If I don't understand my maintenance windows and how long it's going to take me to modernize, this plan kind of falls apart.
+ And so that just means tighter coordination between engineering and fin-ops than option A might demand.
+ Trade-off 2 is, you know, future lock in risk.
+ Um, you must thoroughly test the machine types that I'm committing to in the future because they are using resource-based commitments.
 
-So, like, you now have an audited trail, which is like reviewable, approval, and allowable, exact same offer, you have to move, kind of trust for your code as well.
-And then drift doesn't really happen.
-Because, like, the moment we are interstructive, tips, uh, in your bluster, there, at least I was, I was looking at it and say, oh, like, this, it doesn't look like what they're supposed to be, and then just apply that back to you.
-No, not really, not really viral.
-And this is the architecture that I want to highlight here, which I'll be going more into that and just likes to come.
 
-마이크
+YouTube
 
-But really this is the model that we can sort of encompass using home resource tools.
-So, basically, you have this idea of like a management cluster, which is something that your black monkey owns, and it's something that when you hear the black monkeys, other SREs sort of managed.
-And it comes with a bunch of what we call platform components.
-So, like, you have things like Prometheus M or Loki for your, you know, loss and observability. So, you can see all those ODNS, you have that I want to enforce policies, and then you can have things like city improvement and force, like, network level security, and, like, uh, and then, you know, SQR, so smash, surf manager, uh, K agent, uh, you know, someone out there for solo, so, like, shot out them.
+ And so that might lock me into using those over the next one to 3 years.
+ And so all of that said, right?
+ This is kind of a deliberately simple example, but, you know, it only shows one machine type, one family.
+ In real enterprise environments that we work with, there's commonly, right, dozens of machine types and regions that are going to need to be modernized simultaneously.
+ And so that's when, you know, figuring out this answer of when, when should I modernize?
+ It gets really complicated really quickly.
+ And so it kind of raises the obvious question of, if I'm going to do all this work to create this plan, I need to know, is the juice worth the squeeze?
 
-마이크
 
-And then you have your CSI, CSI, CCMs, which is, like, a provisioners. And then, and then you have two important pieces added off, which is, I go seeking and crossing.
-So, I was thinking is that it offs Ragons Island.
-we talked about.
-So it's basically designed to look at here and then basically apply whatever the ad get into your luster. And prospect, sort of, if you're not familiar with trust me, I think of it as like a loud need of terraform.
-So like lightrap bomb terrapon has its own providers by not provider.
+YouTube
 
-마이크
+ And that's really what takes me to part 3 of the framework.
+ which is about worth.
+ Um, you know, the kind of a core question here is when we focus on performance improvements, or companies often focus on performance improvements, we can also focus on the financial impact that you can expect.
+ And also, right, how does that financial impact?
+ How do I translate that and communicate it to leadership?
+ And I don't want to spend too much time kind of deep diving, you know, these KPIs.
+ Um, this is not designed to be a fin-ups lecture, but at the end of the day, if you're interested in kind of tracking some of the financial KPIs to communicate the worth, um, these are some of the KPIs that we've created at pros props that we really like.
 
-So crossbane has the same thing. And I just put out my data today. It's art lot, whatever, imponents. So we use it, but you can literally just walk around with any car provider and usually go to work.
-And this management cluster is something that you've got a team owns and they sort of like manage its releases and whatnot through USRDs.
-And then, really, the other side of it is basically your app clusters, which is basically what your internal service team would want.
-So like that's the that's the thing that they request for.
 
-마이크
+YouTube
 
-So like they talk to the platform, to like see a life or whatever, and then taste it with a cluster, and then you sort of get a cluster, which is sort of like managed by Argo, managed by CrossPane, all that other stuff.
-And then you have this on the right.
-You get, like, this battle test here slash, like, but at least it is over.
-It's not like pain vanilla, but then it has all your battery or something to use.
-So how does that all work?
+ These are objective metrics for tracking the performance of, uh, or savings performance across a portfolio.
+ So the 1st one is ESR or effective savings rate.
+ This is for tracking the overall ROI from commitments and discounts.
+ So am I paying more or less against the list costs than I previously was?
+ EAR is actually a different metric, right?
+ We call this effective avoidance rate.
+ This is about measuring cost avoided by using less infrastructure in the 1st place, right?
+ It's a cost avoidance metric.
 
-마이크
 
-is basically, yeah, and I is that, your cluster is not rewired, so you have hardened images, and then you have, like, deep face lines.
-So, like, those platform components that we talk about incorporate, like, observabilities, or nicer management, and, like, one of these be standing and all that other stuff.
-If you're cluster.
-So you just, like, your application tabs are not, like, scrambling to find out, like, you know, any rotate search or, like, this image is botherable or whatnot.
-And then your team's version against the Blackhorn.
+YouTube
 
-마이크
+ It not a savings metric.
+ And so this is how you can uh, measure and calculate the impact of neon-modernization by using less in the 1st place.
+ Then finally, uh, e-core or effective cost optimization rate, this is a combined metric, where I am both paying less and using less.
+ And so it aggregates the kind of savings impact across both of those dimensions.
+ And so if you're interested in learning more about this, um, we do add blogs uh, linked in the deck as well that kind of show how we calculate all of these rates and how you can go implement them and test them against your real data in, in, in, in practice.
 
-So what does that do?
-That means like the product, the platform itself is a version and every component in that, uh, so treat, okay, they go to like this, like your platform comes with versions and every version is like a bundle of a star component. And then you just have a single version of your track as opposed to like you as a dad, having to figure out, oh, I need like, you know, eat this version, I need to eat this version, and I need to kind of just work because like they don't work together.
-So you don't need to figure out, yeah.
 
-마이크
+YouTube
 
-So the thing about teams version against some platforms, does that mean each kind of platform version needs, like, a separate, like, grenade cluster or, like, how does that kind of work?
-Uh, just sort of, like, one little opener, is go, do you do the platforms for it and stuff?
-Okay.
-And then you sort of, like, release that up.
-So, like, like, a platform word and one would have, like, open eyes, 1, 3, 3, and then, like, like, low-key version once, and then put one hour into, whatever, and then, like, when you're, yeah, when you're at pluster, requests a version.
+ To get back to kind of the story here, um, and sort of talk about why this matters.
+ Um, modernization, when we talk about what its impact is, it's going to show up in EAR or the effective avoidance rate.
+ And this is the value that vanishes, right?
+ If we only report against the list price.
+ And so we need to, you know, use kind of some or all of these metrics, if we want to effectively communicate this story to leadership.
 
-마이크
 
-One, we would have bundled, like, rarium on PG with, like, those platforms.
-Okay.
-So that means, like, version two would need to be a separate, we need to be right on a separate cluster.
-You can upgrade.
-But then you need, but if the application's pointed to version one, and you upgrade the version one cluster into version two, yeah, it's like you don't have the version one cluster anymore.
-So you kind of break that kind of contract.
-Um, yeah, but, like, so that's, you can choose to use, like, a cluster, whether it's a word, and then just go with another cluster, or you can just use to okay a single.
+YouTube
 
-마이크
+ Now, to give you guys another example, um, this is talking about price performance without commitments.
+ So just to give you guys a quick demo of some of this math by hand here, um, this is talking about an N2 to an N4 upgrade.
+ The exact one I was showing in the previous example.
+ Um, the point I want to drive home here is that a lot of times, so many people get caught up on the hourly cost of the workloads, and they forget to actually normalize this against cost per unit of work.
 
-I agree, I know what you want.
-So, you're applying from a labs for upgrading clusters in place, rather than ever making.
-Yes.
-Yeah.
-Uh, yeah, so, like, now we're at the piece, like, just talk about each one of them, we swear at least a little bit, and how to see, like I mentioned, the propane basically looks, like, you have this Apple app pattern.
-so you know, right.
-So like you have like, you can define an application, which is just like a bunch of applications.
-So, like, uh, to find an app that says, okay, I need, you know, we can, like, provinces, I need, like, I work on everything.
 
-마이크
+YouTube
 
-I used to find that. And then, like, you have a single victory, which is, like, every, that point, you're into a cluster, and add on, and whatnot. And then you have, you have this continuous, like, reconcile, or stay between again and the Ashebusters.
-So I'll go on the management lane, do sink it, and then reconcile that with the actual app poster that's running, so that is always like insane.
-And then everything is already just like everything's in good.
-So that's obviously and crossane is like it doesn an AI.
+ When I was showing that pricing tool, right, I was showing normalized cost performance data, which is just the idea that, right, if I have a more efficient VM or VM processor, I can use lots of them.
+ And so in this example, if I normalize against, you know, cost per request, I can see that upgrade from an N2 to an N4, even if it's more expensive per hour, it may be cheaper in terms of, you know, cost per unit of work.
+ And so we actually have a, again, just plugging a lot of blogs here.
 
-마이크
 
-So we basically say, okay, give me a, like, here, like, like, giving me a cluster of AC. It's a dust of resource and prospect.
-So, like, custom resource, basically, to poison onto, like, a resource called composition.
-So like in the composition, we just define, okay, like, I need my master in laws to be, like, one, two, three, and these are the, uh, eagle firewalls, and these are, like, like, the, just such pieces I need, and you find that as one single composition, or, like, composite resource, which basically is your cluster definition as an API or PRD, and then prospects are, like, toxic law provider, then your specific law provider, and then you just provisions that for you.
+YouTube
 
-마이크
+ If you're interested in kind of learning how to do this exercise for your own sorts of, you know, cost performance benchmarks that you may have internally in your business.
+ We did co-publish a blog with Google, uh, and with a person named Frederico that kind of describes how you can do this again, using your data, using your benchmarks, et cetera.
+ So that's linked in the deck as well.
+ So that's just, you know, normalizing for cost per per unit of work.
+ The next step to this to kind of unlock the kind of true story here is looking at worth with commitments or after my private pricing is taken effect.
 
-So we sort of have this nice infrastructure that we get model, which also data expert, like, like, like, like, like, like, like, like, like, stages that you want infrastructure, uh, managing by data changes. And so, like, you're, um, your posters, like, activities, is to stay the trip. And then, like, it's sort of that. So that.
-Uh, and then I work now, as large, gray as, like, it was.
-So, like, basically, Hubanadis, by people, like, you can feud.
-you can use like for security status and whatnot to like, like have some basic level of security, but then you really need something like, I want to know, and like enforce the policy on the foster level to say like, every workload, every name space starts with the same, like, security posture, and then, like, you don't really need, like, to go to someone and say, hey, like, look at my Yama, this is good, and I say, oh, you like, when I lost it or not?
 
-마이크
+YouTube
 
-Because, like, the policy is, like, take into your cluster, and then every time you sort of, like, creating something that is not supposed to be created, it's an additional time, uh, where, both, in Google 90s and also.
-So, like, it just, it just gets rejected, even before it's a fighting closer.
-So, like, any misconfigured workload gets me directed because before a national cluster.
-So that's, I, I, I, I, I, I, I,
-But it also gives you a little room for tea.
-So, like, you oftentimes you want some, like, exceptions from your patterns.
+ And so this is really after we layer this commitment strategy on.
+ And this is exactly that kind of option A versus option B comparison that I want to focus on.
+ Um, so, right, in option A, we were talking about recommitting using spend-based commitments, an option, an option A, we were talking about recommitting using resource-based commitments.
+ And the kind of key effect here is that when we look at committed costs per unit of work, once we layer in these commitment strategies, the added cost benefits, right, that we get by using those resource based commitments.
 
-마이크
 
-So like, for example, like, you know, one, like, illuminaries, finality, like, what do you just have?
-Do you don't want to restrict an entire new space just so that you have like one bag, like one pot that's supposed to be running on it that you don't want to?
-And I want to sort of like, oh, right, if I go out with things, like, like, you say, like, you do find a gust of policy, that's really, like, like, fine grained to a specific resource.
-So in this in this case, I'm saying like, hey, I want to look at this buster and then like do not allow anyone to delete a provider, which is basically the, which is basically your intro probationer, so you don't want someone to accidentally go and leave that, just like, you're not, like, you're all your interests not gonna be an inside, and things are gonna go bad.
+YouTube
 
-마이크
+ Uh, can be quite substantial, right?
+ In this case, it's up to 26% greater improvement over strategy A versus strategy B.
+ Sorry, strategy B outperfor, sorry, strategy, B outperformed strategy A by 26%.
+ And this 26% improvement, right?
+ That's really the delta that allows us to incur those on-demand costs for a sizable portion of time.
+ And so this is kind of that like full worth story that I'm trying to say, is there's obviously performance benefits from modernizing.
 
-And you not provision stuff anymore.
-So you don't want anyone to fascinate it, you eat it, and then I want to really allow you to, they sort of say, okay, fine, grain it, and I say, okay, this is exactly what I don't want to do.
-And then that just gets enforced.
-But I know what I'm doing.
-You know?
-All right, so then, still here, there you go.
-Like, 0 class with an Apple player.
-So citium is like a CNI, and then they sort of got the EDF here.
-So it just enforced the policy in the urn so that we don't need it as I start crossing a layer, 3 layer, 4 or much.
 
-마이크
+YouTube
 
-And then it sort of like implows who you can talk to within the woman, any other, and networking, and, like, hardening, is something that we want, your platform, you can handle, as opposed to yourself, as a navigation view.
-And then it really has this very important thing and then you sort of allow something delivery.
-Like, that's the security model that future enforced our service in 1924, and both posts are necessary.
-which is what I mean, let's hear.
-And then filling the gap, so it is mashed, right?
-We need service smashed.
-So it's like, uh, we use SDO, and then SDO has, like, transfer, and FDS, and then it takes care of water, water, graphic, and it gets interrupted without any application for changes.
+ And those performance benefits are going to result in an overall usage footprint reduction.
+ And that usage footprint production is also what enables us to unlock a better commitment strategy moving forwards.
+ And so, this full story is important to kind of understand and it's important to be able to articulate clearly.
+ All right, and that's the framework I wanted to talk about, right?
+ It's, uh, what, when in worth?
+ Um, the last piece I want to sort of touch on, and I'll be very brief about this, is just the use of automation.
 
-마이크
 
-Yeah, why are you suing?
-Well, you also need something that, like, uh, layer 7, like sometimes when you're, like, restricting traffic from outside to luster, uh, you want, like, some vine range, things like, okay, like, suppose you have a gateway, and that's, that's the gateway that sort of, like, allows traffic into the buster, then you want something player 7, maybe that could handle that.
-As opposed to, like, 3 posture.
-and having more ready involves you or not.
+YouTube
 
-마이크
+ Um, everything I just described, read, about mapping your fleets, benchmarking, normalizing, uh, checking against negotiated rates, modeling out different coverage options and modernization windows.
+ All of that is very real and hard work to do.
+ Um, and I love that quote that we saw in the 1st slide, right?
+ Which is I have 10 things to do, but I only have capacity for three.
+ I don't want all of this effort to be, you know, number 11.
+ And so my point here is simply that modernization can help alleviate some of this.
 
-So, you really?
-Oh, wait, sorry.
-Perfect thing.
-Silly and recently also introduced transparent anthiolastic thing.
-Oh, they did recently, yeah.
-Very, very recently, very, like, like, like, weeks ago. Oh, that you should passing it.
-Cool, yeah, cool.
-Uh, yeah, and then you basically, like I said, ordered everything because, like, I'm gonna get into this in the next slide, but, like, basically, you don't share service, a translation, you're doing a bit, I should do this, but then, uh, yeah, like, you sort of have an idea of, like, who exactly are going to this, you don't get into that, you tie in OXC with, like, progress, applicable, and anytime, like, uh, and then you'll get to Ops, which is Argo, is the only thing that has, like,
 
-마이크
+YouTube
 
-higher than normal privileges because like it needs to like monitor resources on the non-clusters and stuff. And these are immediate.
-It's like either access compared to like a user word.
-So you sort of like give it that access. And then anything other than like, the, I was thinking service, I can't do anything else, like, are the ordinary planners or...
-And, uh, on morning, I'm happy to get, and that's the fun part, right? Like, you only, um, use just enabled your IDC on computer and use natively, so that, like, you, you just have more of it. Or EC label, and you have, like, do you know exactly who they want?
+ In our case, right, we can use automations, you analyze cost and usage data, right?
+ It can help map your fleet and map your commitments.
+ It can help identify modernization recommend, recommendation candidates for specific BM families that should be moved, and it can estimate cost performance using your negotiated rates.
+ It can then model out and project cost savings and cost avoidance.
+ And then finally, write automation can execute on this on parts or all of this strategy on your behalf.
+ So that you're continually covered with commitments throughout this throughout these changes.
 
-마이크
 
-Just like, oh, I see ties.
-user, total, and then you like that, you know, how that works. and then you shift the same SSO in every single game. and then you sort of like allow teams to sort of say, okay, like, this is the, uh, you sort of define the roles that are tied to your cluster and then you just allow your, you used to sort of say, okay, like, please have this in your date of your league open, and then, like, the artwork, you should just get the assets at least.
-So, like, same day, then, and then, like, free.
+YouTube
 
-마이크
+ And so, you know, there's many routes to automation, automation.
+ You can potentially build some automation yourself.
+ There's lots of great, you know, AI coding solutions out there that can help with this.
+ But if you are looking again for a product solution that is ready to go out of the box, this is exactly the domain and type of problem that prosperops, automates, and solves for.
+ Again, if you're interested in this, we're happy to talk specifics after the call today.
+ And so the real goal here around VM modernization is just so it should not just improve your infrastructure, right?
 
-And our love.
-So, like, like I said, our back time straight into YDC.
-So that, like, you're going to see, uh, religious, just sort of translated into, like, our background, like, primitives, like, chusterols, and chusterol lining, so that is, like, very easy. And then, upgrade, like, I just mentioned earlier, like, the platform ships are running front of, like, a version with, like, a model of, like, graph of components, and then there's also a version in every add-on version.
-They sort of like travel together in that version and anytime you want to upgrade, like the cluster's work, like specific component, you sort of like release the battery, so like a minor release off the platform, and then you say, like, okay, this is, this is really, this is.
 
-마이크
+YouTube
 
-Yeah.
-How many different platform versions do you currently have?
-No, it doesn't work.
-Yeah.
-Yeah, like, buy, you know what?
-and then
-And then, yeah, so the team or helps, like, this version, and then, like, blow that, throwing back is just, like, rewarding a commit, so, like, you just, like, let's say you upgrade it, you are platform version from, like, one to, like, 2, and you find out, okay, something's bad, then just, like, blow that back, and then you're platforms, suppose, to sort of, right?
+ If we use automation effectively, we ideally, right, don't create another spreadsheet that someone has to babysit and monitor.
+ That is effectively all I had for today's talk, just to kind of close out my final thoughts on this.
+ Um, 1st off, right, there's never a perfect time.
+ Modernization, or specifically VM modernization rate, it's an ongoing problem, not a one and done type of issue.
+ Seconds, modernize for cost performance.
 
-마이크
 
-Yeah. Do you think it's important to bundle the platform components, add-offs, um, set, uh, together with the Kuber Day version?
-We've sort of been debating that, like, sort of, like, creating, like, a different CRE of whatnot, like, just for the lack of emergence, and then, like, too many candies on each other.
-But yeah, this is how it is right now.
-We've had some issues that, because that's, that's the, uh, that's the pattern that I've followed in my previous company and one that I'm looking at, adopting here at Ziga, but I'm wondering if I should consider bundling the cluster version to the rest of the pilot product also.
+YouTube
 
-마이크
+ Modernized for cost and performance at once.
+ Um, when we look at the best outcomes that get created, we have to be looking at both the fin-ops and the engineering scorecard.
+ Three, um, use the framework.
+ What, when, and worth?
+ I love this framework.
+ It just is a very simple way to communicate this sort of modernization effort to multiple different stakeholders.
+ Number four, um, real savings, right?
+ They go beyond list price.
+ If you want to do this work accurately, you have to use negotiated rates.
 
-Yeah, we were sort of indicating that, like, it kind of makes sense. It, two years ago, when we sort of architected it, and now I was like, oh, yeah, can we do things better? Like, can we, like, under the open ice version apart from that?
-So like you can upgrade to.
-Yeah.
-Yeah, they're awesome.
-Uh, yeah, and then the last but not least, like, laughing is, like, I couldn't do it off without any, I was like, well, just do that.
-And I wanted to like it.
-So, gay agent is, like, no, the source of CNCF, Samos, I think.
 
-마이크
+YouTube
 
-AI, agent, framework, sono, whatever, like, allows you to run agents, in group, and, and, like, whatever, in ways.
-But I just find them as a young monster.
-And then it's sort of like you can keep this as a top to your buster.
-So you can say like, oh, like, just sit and use like a pot thrashing, or like you have some spy on it, one in the saving.
-And then, like, you can just use natural language, top URK, and say, hey, like, look at this, and then, like, it's sort of like that, and watch, magic spaces, and audios, all this stuff.
-And then we'll diagnose, like, just, like, look at these signals and sort of, like, say, oh, what's wrong with it?
+ Number five, measure with ROI-based metrics.
+ Today, in our call, right, we discussed effective savings rate, effective avoidance rate, and e-core.
+ Um, but there are plenty of other industry standards that you can include and use as well.
+ The number six, right?
+ Automated.
+ This is just, so if you write, if you could automate a problem, you should.
+ And so this is going to ultimately be the lever that's going to free up your capacity to go focus on higher priority work.
 
-마이크
 
-And then you can, gaze it on the clues that you allow it, can either just like tell you what to do or if you just don't ask me to do whatever.
-I noticed in your architecture diagram that Cajun was only on the hot poster, hot buster, is that right?
-Yeah, that's right.
-So, so, like, right now, sort of just, like, uh, platforming, the nearest SRIs are, like, diagnosed the app cluster in a regal in fashion.
-Okay, so I was, like, thinking about, like, giving it to applust with themselves, so that, like, you say, monitor and stuff.
+YouTube
 
-마이크
+ And so all in all, uh, just to round out my talk here, there's never a perfect time to modernize.
+ Right?
+ But there is a smart time to modernize.
+ Know what you're moving, time it against your commitments, and do the math on whether the juice is worth the squeeze.
+ And so, in the example we talked through today, it was worth about 26%.
+ And really, you know, that's the talk here.
+ So, um, that's all I have for today.
+ Let's please, uh, get the questions, open this up for Q and A.
 
-having UI just like use you it yourself.
-And is that putting it on the up cluster so that people outside the SRA team can't access it?
-Yeah.
-Okay.
-Yeah.
-Uh, yeah, so that's basically what it looks like. It's, uh, an Asian with is on Y, chat, kind of looks like the RGPD.
-This is like, going to the feature of this, which does not have the thing in the water.
-We basically just chat where we just give it USIs or whatever, and then, like, they can use this as like a 1st preface to, like, take into what I got, you know, problems that are having to, like, use UCD or, you can also whatnot.
 
-마이크
+YouTube
 
-So like it's nice it just you like in this case like it health but like you can really die and stuff.
-Yeah, and lastly, I wanted to ask about this shared responsibility model.
-So, it's sort of like the Apple team owns the airplane, it's reliability, it's software, what's on it.
-And then you sort of define the role path as you pause, which is like, okay, I like to put the next version, the laptop is one version and stuff.
-And you sort of, like, define the artist that Alima and Paris, and the comment used that he was already used to use, and that's the responsibility that a platform came in Paris, and what the application came to was sort of, like, they need to know how to actually use a platform, which is like your application, your platforming will give you, like, a CLI or an API that's sort of, like, how to interact with it, and then the,
+ Nice.
+ Thanks so much, Andrew.
+ Fort and sweet and to the point.
+ I loved the framework, especially very interesting.
+ Um, well, before you guys are warming up with the questions, uh, something I was interested in.
+ So I guess you work with customers a lot.
+ So what you see is the biggest obstacle between, you know, we should actually modernize and people doing it.
+ Yeah, what is the biggest obstacle between wanting to modernize and getting it accomplished?
 
-마이크
 
-Yeah, you sort of like listen to that and said, okay, like these are the last people to realize this is how it asses it.
-And then they sort of like own the closed security posture.
-So like, oh, you're not.
-Yeah, and then we sort of like re-compliance into it and then they choose when you adopt in the world.
-And how you met her was working, right?
-It's like just like, it feels the things like how you time to avoid from a branding service.
-So, like, you start starting a service, how long do you take to work production? And then, like, I got option rate itself.
+YouTube
 
-마이크
+ Yeah, I mean, most recently, I have to say it's the capacity.
+ Like, everything I was talking about around timing, I could have this awesome multi-layered plan around, uh, you know, moving my workloads from N2s to N4s.
+ And then I have this thoroughly laid out.
+ I have, you know, 7 different approvals from every one of my company.
+ The problem we see is that when customers get that plan approved finally, they go click the button, they get an air message from Google or from Azure saying, we actually don't have capacity on the new hardware.
 
-So other teams actually allowing your platforms?
-Are they like navigating around it over time?
-And like, what's the efficient really, good option, and like, using a depth, like doing something, test stuff?
-And at the end of the life.
-So what do you do as an application, SPOS, you inherit staff service?
-Open a PR, requesting a new cluster.
-Once I guess March, if we buy someone in USRE, offer the app on team of knowing that, saying that, okay, this is someone that actually uses it, and it does to exists, and then, like, no, it is coming and working on.
 
-마이크
+YouTube
 
-SO was out of the boss.
-And then, yeah, yeah. Are there any directors for, like, application games, seniors, like, modern versions of their platforms?
-Uh, really?
-If it's not wearing my screen.
-If they're not, you say bother versus platforms, or stuff, it's gonna be a client because it's gonna have CBDs, or, and also, you only, um, 30 days, 30 days, 80, 30 years back.
+ Um, and that's really, again, I mentioned this because that data is so hard to get.
+ Hyper scalers keep that capacity and availability information incredibly close to their chests.
+ And so as you're creating this plan for modernization, um, it's really important that you loop in your technical account managers or you're, uh, you know, uh, architects at these hyper scalars so that you can get information from them on where the availability is and what zones and regions that availability is in.
 
-마이크
 
-So at some point you do, you have to, especially in this model where they found a little different modent and version. Right. Then, you know, honestly... Yeah, especially, especially on this on the platform, a platform... That's a question. I see how, like, it was kind of, like, I imagine, like, this is me being to the goal, this is what I imagine will happen.
-Like, we'll be told, like, oh, like, the old version of the platform is secure, you know, right? The new version, we'll be like, okay, fine, whatever.
+YouTube
 
-마이크
+ Hmm.
+ No, makes sense.
+ Uh, then there is a question from Dirk. Uh, what is the obsession to migrate from VM very on premise to, um, to Azure?
+ Yeah, that's a very interesting question, right?
+ Um, the example I was talking about around, um, modernization, the examples I was focusing on are primarily within a hyper scalar.
+ So that was assuming, right, that I already was using Azure, and I was running legacy hardware, so like VM instance types or families that Azure introduced seven, 8 years ago.
 
-Like, what is the key?
 
-마이크
+YouTube
 
-What is the current, the process of getting the feedback from the developers? It's like, oh, we want to test it out of this, do you teach it, et cetera?
-Can I be bundled as a better, ruralist version, how that is centered? I hear that, it does.
-the world, probably, does, like, rely on the developers, like, up their platform purchase, so I'd much rather have, like, put them on green, basically, where it just will, um, they'll automatically get it, if it passes fast, and if it doesn't pass, pass, then I'd be able to fix it.
+ And I want to upgrade those onto newer hardware within Azure.
+ That being said, though, there's plenty of modernization, uh, with the most common form of modernization out there across the customers we see is modernization from on-premise hardware to cloud hardware.
+ Um, that's in a completely different set of financial analysis.
+ Um, you know, it's kind of that classic, uh, you know, cost of ownership analysis that needs to be done about, uh, kind of renting the services versus outright ownership, outright owning them, which you traditionally have in an on-prem environment.
 
-마이크
+
+YouTube
+
+ Um, so yeah, that's a totally different set of problems.
+ Um, I think, you know, generally speaking, kind of kind of the sentiment I hear amongst the customers we talk to is a little bit of like, maybe we move too much too quickly to the cloud, uh, in just the respect that, um, you know, cloud can be prohibitively very expensive, right?
+ And if you're not careful about how you're managing your costs, a lot of customers have had sticker shock in terms of we've moved from VMware to Azure with the expectation that we would save us, lots of money.
 
-like
-many
-No, I like to speak about it, but yeah, perfect.
-Yeah, I've heard their keys.
-Okay, one last question, guys.
-Yeah.
-A lot of questions.
-It's like, okay, 2 more questions.
-we upgrade our manuals and be honest, we work out, there's a lot.
 
+YouTube
+
+ And then those savings haven't come to fruition.
+ So, um, yeah, I don't know.
+ that's a perfect answer to your question, Dirk, but it is a good one to ask.
+ Yep.
+ Um, are there any other questions?
+ Can you guys?
+ And uh, do you do you see this like fin-ups like frameworks evolving now with uh, obviously whole, uh, you know, uh, Companies tracking like more and more this like wordlog spots driven by agents instead of human headcounts.
+
+
+YouTube
+
+ Yeah, I think, um, you know, in terms of how this applies to the FinOps framework, I think the FinOps framework for one is expanding.
+ So it is including things like on premises, costs, and AI costs as well.
+ Um, The reason I'm so fascinated by VM modernization to begin with, is it's one of the most clear cut ways to save money nowadays.
+ Um, It's also very tangentially related, you know, just to be transparent, right?
+ It's very tangentally related to what we already do.
+ As I mentioned, right, pros props, those commitment management via modernization is largely impacted by commitments themselves.
+
+
+YouTube
+
+ Um, but to answer your question, Maria, I think what I find fascinating about modernization is, especially when we look at, just take a step back.
+ Cloud Span is going up, AI costs are going up into the right.
+ Um, and across all of the organizations that we work with and analyze their data for, um, we see VMO modernization as one of the low effort.
+ I savings outcome sort of opportunities that still remains.
+ It's not that hard to move my instances from N2 to N4 or from a legacy as your instance to a new one.
+
+
+YouTube
+
+ And if we quantify the potential savings, uh, it can it can be quite substantial when we look at total cost avoidance.
+ Like, again, 20 to 50% of the total compute spent in the cloud environment.
+ And so, um, to tie my answer back to your question.
+ I get excited about it because it's the low hanging fruit.
+ If we can do this modernization strategy quickly and effectively, we are, we can combat a lot of the rising costs that we see elsewhere within the cloud environment.
+
+
+YouTube
+
+ Yep.
+ Oh, totally.
+ Uh, there is, uh, I'm not sure, uh, sure, Rama, if you have a question, but uh, I guess it's more of the statement, right?
+ In GP, we can use computer class to define backups in case the machine family we picked is out of stock.
+ Yeah, that is actually really good information.
+ I was not, I was not aware of that.
+ I might be following up with you after a day's call to ask you the movie more about that.
+ Sounds cool.
+ Nice.
+ So I guess if there are no other questions, you guys can always contact Andrew either in the platform engineering slack or over the email.
+
+
+YouTube
+
+ Um, and uh, the Prosper Ops team is going to follow up with the slides and the recording from from the session, so you can always have it uh, handy and review with your team.
+ Thank you so much for today, Andrew, and everyone for joining.
+ I'll have burgers for dinner.
+ So, I'll tell you how it goes.
+ Do you have a special recipe?
+ Oh, no, I'm mostly, I'm bad cooked, so I usually go out in Chicago and try to try to find all the good restaurants.
+
+
+YouTube
+
+ So if anyone's ever in town, let me know.
+ But yeah, thank you guys so much for having me.
+ It's been a pleasure getting to do this session with you all.
+ Um, yeah, pleasure.
+ Nice.
+ Thank you so much.
+ See you.
+
+
 마이크
 
-I hope it's not manual.
-Wait outgrades.
-That's all I can say, you know, from a B, wanted B, too.
-Yeah, which I'm all automated otherwise.
-So, it is a lot of it. So, like, you guys are on applications, like, in your capability, you go say, like, okay, I want to walk up to work, one, two.
-Then the black one sort of takes care of the rest. Yeah.
-There is a manual where you're like, okay, you open PR into your, you will lose it and say, okay, I'm your mom, and the platform just sort of takes care of.
-And there is, I mean, I'm over YouTube store. So, and I'm going to the other purposes, so.
+It can help identify modernization, recommend, recommendation candidates for specific VN families that should be moved, and it can estimate cost performance using your negotiated rates.
+ And then model out and project cost savings and cost avoidance. And then finally, right, automation can execute parts of all of this strategy on your behalf, so you're continually covered with commitments throughout this throughout these changes.
+ And so, you know, there's many routes to automation, automation.
+ You can potentially build some automation yourself.
 
+
 마이크
+
+ There's lots of great, you know, AI coding solutions out there that can help with this.
+ But if you are looking again for a product solution that is ready to go out of the box, this is exactly the domain and type of problem that pros drops, automates, and solves work.
+ Again, if you're interested in this, we're happy to talk specifics after the call today.
 
-How are you managing the front room?
-Uh, what's specific, uh, uh, sort of the cross-band grouping?
-Yeah, that you used to spin up the rest of the cooking expresses.
-How are you managing the, how country?
-Is it manage yourself manage?
-It is, it is not match.
-Yeah, so, like, these are, it is provision through, like, you know, the action and whatnot, but then it is stuff eating itself.
-You know, how was it?
 
 마이크
 
-How, how, how many do you just create?
-Create a management cluster?
-Yeah. through like, you know, action. Do you have actions?
-Yeah.
-So it's sort of like, it needs to be like launched by an SRE and then each of the side, it's supposed to be green analyzed, is there, then?
-So what's the what's the IAC dependency?
-So you're capping? What's the structure test for the NFC?
-Oh, or
-Yeah.
+here around modernization is just so it should not just improve your infrastructure, right?
+ If we use automation effectively, we ideally, right, don't create another spreadsheet that someone has to babysit and monitor.
+ That is effectively all I had for today's talk, just to kind of close out my final thoughts on this.
+ First off, right, there's never a perfect time.
+ Modernization is specifically neon modernization, right?
+ It's an ongoing problem, not a one and done type of issue.
 
+
 마이크
+
+ Seconds, modernized for cost performance.
+ Modern asper cost and performance at once.
+ When we look at the best outcomes that we've created, we have to be looking at both withinops and the engineers scorecard.
+ Three, um, use the framework, what, when, work?
+ I love this framer.
+ It just is a very simple way to communicate this sort of modernization effort to multiple different stakeholders.
+ Number four, real savings, right?
+ They go beyond list price. If you want to do this work, accurately, you have to use negotiated writs.
 
-Yeah, Kathy is, didn't exist like at the time, and now I'm totally very happy.
-So like, Right.
-Well, last question.
-Yeah.
-I think in your cages, there are features, you think that they've got code and my MCB service management, right? Yeah, yeah, yeah.
-Yeah, King Asian is a lot of those, so like you can sort of like bring in your own orders and like your MCP services, you've got to have more of that. I should just.
-which is not available in the platform.
 
 마이크
 
-Do you have any expense, what do you have? You can refer any application as a app job, so as long as you have a app chart, you can just like say, okay, I want the same card, and then you find it as part of the application, and I'm going to just draw your hand and charge.
-If you're loving the users to do that one, then the users will start installing all the prepared questions, right?
-So something is happening outside your planet.
-I mean, you can't really control what things are going to do.
-You sort of say, okay, you can describe the best practice if you document things, but then really, right, it's sort of a shared responsibility of, like, at the end of the day, it's like your cluster, you know, need to do your cluster.
+ Number five, measure with RLI-based metrics.
+ Today, in our all right, we discussed effective savings rate that can avoid this rate, and e-corp.
+ But there are plenty of other industry standards that you can include and use as well.
+ The number six, right?
+ automated.
+ This is just, so if you read, if you can automate a problem, you should.
+ And so this is going to ultimately be the letter that's going to free up your capacity to go focus on higher priority work.
 
+
 마이크
+
+ So all in all, just around at my talk here, there's never a perfect time to modernize, right?
+ There is a smart time to modernize.
+ Know what you're doing, time it against your commitments, and do the math on whether the juice is worth the squeeze.
+ And so, in the example we talked through today, it was worth about 26%.
+ Really, you know, that's the talk here.
+ So, um, that's all I have for today.
+ Let's please, uh, open something Q&A.
+ Nice.
 
-You can say it's like secure and all that.
-And if you choose to go close or you choose to start something like that, it's not supposed to be installed. If you like, like, don't blink with a wrapping proponent that we describe, then 3 audience or exactly.
-Okay, it was a great knock, thank you.
-That was great talk, right?
-I think
 ```
