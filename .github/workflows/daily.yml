@@ -12,6 +12,7 @@ on:
       - "hugo.toml"
       - "archetypes/**"
       - "assets/**"
+      - "pipeline/**"
 
 permissions:
   contents: write

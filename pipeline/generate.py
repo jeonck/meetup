@@ -422,7 +422,10 @@ def generate_blog_cli(model: str, sentence: str) -> dict | None:
     prompt = BLOG_PROMPT.format(sentence=sentence)
     env = os.environ.copy()
     env.pop("ANTHROPIC_API_KEY", None)
+    # --tools 는 노출 범위, --allowedTools 는 권한 승인 — CI(비대화형)에서는 둘 다
+    # 있어야 WebSearch가 실제로 실행된다 (없으면 권한 요청 문구만 출력되고 실패).
     cmd = ["claude", "-p", "--model", model, "--tools", "WebSearch",
+           "--allowedTools", "WebSearch",
            "--output-format", "text", "--append-system-prompt", BLOG_SYSTEM_PROMPT]
     for attempt in (1, 2):
         try:
