@@ -194,6 +194,13 @@ Transcript:
 
 HEADING_BLOG_REFS = "🔗 참고 자료 (작성 중 열람한 자료)"
 
+# 게시가 끝나면 input/script.md 를 이 최소 템플릿으로 되돌린다 (안내 한 줄 + 빈 코드블록).
+# 실패한 스크립트가 하나라도 있으면 재시도를 위해 되돌리지 않는다.
+RESET_TEMPLATE = """<!-- 밋업 스크립트(STT 전체)를 아래 코드블록 안에 붙여넣고 커밋하면 즉시 분석·게시됩니다. 여러 개는 `---` 줄로 구분 -->
+```
+```
+"""
+
 # 포스트 본문 섹션 제목
 HEADING_INPUT = "📋 밋업 한눈에 보기"
 HEADING_INPUT_QUOTE = "오늘의 기술 토픽"
@@ -695,6 +702,11 @@ def main() -> int:
     if new_count:
         state["processed"] = processed
         STATE_FILE.write_text(json.dumps(state, indent=1, sort_keys=True), encoding="utf-8")
+
+    # 게시 완료된 스크립트는 입력 템플릿에서 비운다 — 실패분이 있으면 유지(재시도용)
+    if sentences and not failed and not fatal_error:
+        SENTENCE_FILE.write_text(RESET_TEMPLATE, encoding="utf-8")
+        log("input/script.md 를 초기 템플릿(한 줄 안내 + 빈 코드블록)으로 비웠습니다")
 
     if fatal_error:
         log(f"\n중단: 복구 불가능한 API 오류 — {fatal_error}")

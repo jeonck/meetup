@@ -40,9 +40,10 @@ Hugo build → GitHub Pages 배포 (meetup.metacog.co.kr)
    후킹되어 즉시 분석·게시가 시작된다** (로컬 git 작업 불필요).
 5. 몇 분 뒤 사이트에 새 포스트가 올라온다.
 
-이미 게시에 사용된 스크립트는 파일에 그대로 남아있어도 다시 게시되지 않는다
-(텍스트 해시 기준 dedup). Actions 탭 → "Daily meetup post" → "Run workflow"로 수동
-실행도 가능하다.
+게시가 끝나면 파이프라인이 `input/script.md` 를 초기 템플릿(안내 한 줄 + 빈
+코드블록)으로 자동으로 비워 커밋한다. 실패한 스크립트가 있으면 재시도를 위해
+비우지 않으며, 만에 하나 남아 있어도 텍스트 해시 dedup으로 재게시되지는 않는다.
+Actions 탭 → "Daily meetup post" → "Run workflow"로 수동 실행도 가능하다.
 
 ### 입력이 없는 날 — 미니 기술 브리프
 
